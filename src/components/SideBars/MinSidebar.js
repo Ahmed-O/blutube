@@ -11,9 +11,9 @@ import { MdOutlineVideoLibrary } from "react-icons/md";
 import { MdVideoLibrary } from "react-icons/md";
 import { MdHistory } from "react-icons/md";
 
-function Sidebar() {
+function MinSidebar() {
   return (
-    <aside className="Sidebar">
+    <aside className="MinSidebar">
       <div className="sidebar-icon">
         <AiFillHome />
         <p>Home</p>
@@ -42,4 +42,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default MinSidebar;
