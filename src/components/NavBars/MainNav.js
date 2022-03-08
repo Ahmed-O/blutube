@@ -17,10 +17,15 @@ function Nav() {
     searchNav.classList.toggle("SearchNav-hidden");
   }
 
+  function showSideBar() {
+    // const sideBar = document.querySelector(".MinSidebar");
+    // sideBar.classList.toggle("activeSideBar");
+  }
+
   return (
     <nav className="Nav">
       <div className="left">
-        <div className="icon-bg">
+        <div className="icon-bg" onClick={showSideBar}>
           <VscMenu />
         </div>
         <div className="logo">
