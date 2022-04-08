@@ -8,7 +8,7 @@ import { GrApps } from "react-icons/gr";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import SearchBar from "./SearchBar";
 
-function Nav() {
+function Nav({ setSearchInput }) {
   function showSearchBar() {
     const nav = document.querySelector(".Nav");
     nav.classList.toggle("Nav-hidden");
@@ -37,7 +37,7 @@ function Nav() {
         {/* <input type="text" placeholder="Search" className="search-bar" />
         <AiOutlineSearch className="search-icon" />
         <MdKeyboardVoice className="voice-icon" /> */}
-        <SearchBar />
+        <SearchBar setSearchInput={setSearchInput} />
       </div>
       <div className="right">
         <div
