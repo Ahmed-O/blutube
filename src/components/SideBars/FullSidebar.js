@@ -5,18 +5,14 @@ import SignIn from "../NavBars/SignIn";
 function FullSidebar() {
   return (
     <aside className="FullSidebar activeSideBar hide-sidebar">
-      {sideBarData.map((item) => {
+      {sideBarData.map((item, index) => {
         return (
-          <div className="sidebar-icon">
+          <div key={index} className="sidebar-icon">
             {item[0]}
             <p> {item[1]}</p>
           </div>
         );
       })}
-      {/* <div className="sidebar-signin">
-        <h6>Sign in to like videos, comment, and subscribe.</h6>
-        <SignIn />
-      </div> */}
     </aside>
   );
 }

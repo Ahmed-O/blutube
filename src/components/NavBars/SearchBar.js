@@ -6,6 +6,7 @@ function SearchBar({ setSearchInput }) {
   function vidSearch(e) {
     e.preventDefault();
     const searchTerm = document.querySelector(".search-bar").value;
+    console.log("SEARCH TERM IS " + searchTerm);
     setSearchInput(searchTerm);
   }
 

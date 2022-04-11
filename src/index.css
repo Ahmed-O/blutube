@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@450&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 *{
   box-sizing: border-box;
@@ -299,27 +299,40 @@
 
 
 
-.MainVideos{
+.PopularVideos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-  .Video {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    gap: 10px;
-    padding: 5px 5px;
+.Video {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 15px;
+  padding: 5px 5px;
   }
 
-  .vid-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; 
-    padding: 5px 5px;
-  }
+.Video iframe {
+  padding-top: 20px;
+}
+.vid-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 5px;
+}
 
-  .vid-info h5{
-    color: #333333;
-  }
+.vid-info h5 {
+  color: #444;
+}
+
+.SearchVideo {
+  display: flex;
+  align-items: flex-start;
+  padding: 25px 0px;
+}
+
+.SearchVideos .vid-info {
+  padding-left: 25px;
+}

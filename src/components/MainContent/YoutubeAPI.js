@@ -1,6 +1,5 @@
 import Axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import SearchContext from "../../App";
+import { useEffect, useState } from "react";
 import PopularVideo from "./PopularVideo";
 import SearchVideo from "./SearchVideo";
 
@@ -21,64 +20,35 @@ function YoutubeAPI({ searchInput, setSearchInput }) {
   let [searchVideos, setSearchVideos] = useState([]);
 
   useEffect(() => {
+    // API call to popular videos
     const getPopularVideos = () => {
       Axios.get(mostPopularURL).then((response) => {
-        console.log("popular");
-        console.log(response.data.items);
+        // console.log("popular");
+        // console.log(response.data.items);
         setPopularVideos(response.data.items);
-        // return response.data.items;
       });
     };
+
+    // API call to searched videos
     const getSearchVideos = () => {
       Axios.get(searchURL).then((response) => {
-        console.log("search ");
-        console.log(response.data.items);
+        // console.log("search ");
+        // console.log(response.data.items);
         setSearchVideos(response.data.items);
-        // return response.data.items;
       });
     };
 
-    // If search input is enter fetch search data
+    // If search input is entered then retrieve search results
     if (searchInput) {
       getSearchVideos();
-      console.log("IN SEARCH VIDS");
     } else {
-      console.log("IN POPULAR VIDS");
       getPopularVideos();
     }
-
-    // console.log(popularVideos);
-    // getPopularVideos();
   }, [searchInput]);
-
-  let id = "";
-  let thumbnail = "";
-  let videoTitle = "";
-  let channelTitle = "";
-  let channelViews = "";
-
-  // if (popularVideos.length) {
-  //   id = popularVideos[0].id;
-  //   thumbnail = popularVideos[0].snippet.thumbnails.medium.url;
-  //   videoTitle = popularVideos[0].snippet.title;
-  //   channelTitle = popularVideos[0].snippet.channelTitle;
-  //   channelViews = popularVideos[0].statistics.viewCount;
-  // }
-
-  // Iterate thru the response data and pass in the Video component
-  //
-
-  // CONTEXT HOOK
-  // const data = useContext(SearchContext);
-  // console.log(SearchContext);
-  // console.log("CONTEXT IS " + data);
-  // console.log("Seach Input is " + searchInput);
-  // setSearchInput("hoho");
-  console.log("Seach Input is " + searchInput);
 
   if (searchInput) {
     return (
-      <div className="MainVideos">
+      <div className="SearchVideos">
         {searchVideos.map((video) => {
           return (
             <SearchVideo
@@ -94,7 +64,7 @@ function YoutubeAPI({ searchInput, setSearchInput }) {
     );
   } else {
     return (
-      <div className="MainVideos">
+      <div className="PopularVideos">
         {popularVideos.map((video) => {
           return (
             <PopularVideo
@@ -107,12 +77,6 @@ function YoutubeAPI({ searchInput, setSearchInput }) {
             />
           );
         })}
-        {/* <Video
-            thumbnail={thumbnail}
-            videoTitle={videoTitle}
-            channelTitle={channelTitle}
-            channelViews={channelViews}
-          /> */}
       </div>
     );
   }
