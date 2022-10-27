@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/blutube/static/css/main.c9496321.css",
+    "main.js": "/blutube/static/js/main.321bd051.js",
+    "static/js/787.236ff852.chunk.js": "/blutube/static/js/787.236ff852.chunk.js",
+    "index.html": "/blutube/index.html",
+    "main.c9496321.css.map": "/blutube/static/css/main.c9496321.css.map",
+    "main.321bd051.js.map": "/blutube/static/js/main.321bd051.js.map",
+    "787.236ff852.chunk.js.map": "/blutube/static/js/787.236ff852.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9496321.css",
+    "static/js/main.321bd051.js"
+  ]
+}
