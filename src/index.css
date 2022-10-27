@@ -7,6 +7,7 @@
 }
 
 /* Navbar */
+/* --------------------------------------------------- */
 .Nav {
   display: flex;
   justify-content: space-between;
@@ -45,11 +46,7 @@
 .Nav .mid{
   display: none;
   flex-grow: 1;
-  padding-left: 15%;
-}
-
-.Nav-hidden{
-  display: none;
+  padding-left: 15px;
 }
 
 /* Replacing mid? */
@@ -59,10 +56,6 @@
   align-items: center;
   margin: 10px 0px;
   gap: 15px;
-}
-
-.SearchNav-hidden{
-  display: none;
 }
 
 .arrow-icon{
@@ -88,10 +81,10 @@
   font-size: 16px;
 }
 
-.search-icon{
-  font-size: 40px;
+.search-icon {
   box-sizing: content-box;
-  padding: 0px 20px;
+  font-size: 25px;
+    padding: 8px 20px;
   background-color: #f5f5f5;
   border: 1px solid #e0e0e0;
 }
@@ -109,7 +102,7 @@
 }
 
 .voice-icon{
-  font-size: 40px;
+  font-size: 25px;
   margin-left: 15px;
 }
 
@@ -132,7 +125,6 @@
 }
 
 
-
 .Nav .right{
   display: flex;
   justify-content: center;
@@ -151,7 +143,9 @@
   font-size: 15px;
   white-space: nowrap;
   color: #106fff;
+  cursor: pointer;
 } 
+
 
 .user-icon{
   font-size: 25px;
@@ -162,7 +156,7 @@
 }
 
 /* Responsive Navbar */
-@media screen and (min-width: 656px){
+@media screen and (min-width: 660px) {
   .Nav .hide-icon{
     display:none;
   }
@@ -174,26 +168,20 @@
   .SearchBar{
     width: 100%;
   }
-  
-}
 
-@media screen and (min-width: 825px){
-  .search-icon{
+                .search-icon {
     font-size: 25px;
     padding: 8px 20px;
   }
-  .voice-icon{
+                .voice-icon {
     font-size: 25px;
   }
-
-  .SearchBar{
-    width: 90%;
-  }
-
+  
 }
 
 
 /* Sidebar */
+/* --------------------------------------------------- */
 .MinSidebar{
   display: flex;
   flex-direction: column;
@@ -224,9 +212,8 @@
   font-size: 12px;
 }
 
-
-
 /* Main Section */
+/* --------------------------------------------------- */
 .main-section{
   display: flex;
 }
@@ -243,9 +230,13 @@
     display: flex;
     flex: 0.01;
   }
+                .Nav .mid {
+                  padding-left: 15%;
+                }
   .content{
     flex: 0.99;
   }
+    
 }
 
 @media screen and (min-width: 1329px){

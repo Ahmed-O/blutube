@@ -7,14 +7,14 @@ import { MdKeyboardVoice } from "react-icons/md";
 import { GrApps } from "react-icons/gr";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import SearchBar from "./SearchBar";
+import SearchNav from "./SearchNav";
+import { useState } from "react";
 
 function Nav({ setSearchInput }) {
-  function showSearchBar() {
-    const nav = document.querySelector(".Nav");
-    nav.classList.toggle("Nav-hidden");
+  const [hiddenSearchNav, setHiddenSearchNav] = useState(true);
 
-    const searchNav = document.querySelector(".SearchNav");
-    searchNav.classList.toggle("SearchNav-hidden");
+  function showSearchNav() {
+    setHiddenSearchNav(false);
   }
 
   function showSideBar() {
@@ -22,44 +22,54 @@ function Nav({ setSearchInput }) {
     // sideBar.classList.toggle("activeSideBar");
   }
 
-  return (
-    <nav className="Nav">
-      <div className="left">
-        <div className="icon-bg" onClick={showSideBar}>
-          <VscMenu />
+  if (hiddenSearchNav) {
+    return (
+      <nav className="Nav">
+        <div className="left">
+          <div className="icon-bg" onClick={showSideBar}>
+            <VscMenu />
+          </div>
+          <div className="logo">
+            <AiFillYoutube className="logo-icon" />
+            <h3 className="logo-name"> BluTube</h3>
+          </div>
         </div>
-        <div className="logo">
-          <AiFillYoutube className="logo-icon" />
-          <h3 className="logo-name"> BluTube</h3>
+        <div className="mid">
+          {/* <input type="text" placeholder="Search" className="search-bar" />
+          <AiOutlineSearch className="search-icon" />
+          <MdKeyboardVoice className="voice-icon" /> */}
+          <SearchBar setSearchInput={setSearchInput} />
         </div>
-      </div>
-      <div className="mid">
-        {/* <input type="text" placeholder="Search" className="search-bar" />
-        <AiOutlineSearch className="search-icon" />
-        <MdKeyboardVoice className="voice-icon" /> */}
-        <SearchBar setSearchInput={setSearchInput} />
-      </div>
-      <div className="right">
-        <div
-          className="icon-bg hide-icon"
-          id="navSearch"
-          onClick={showSearchBar}
-        >
-          <AiOutlineSearch />
+        <div className="right">
+          <div
+            className="icon-bg hide-icon"
+            id="navSearch"
+            onClick={showSearchNav}
+          >
+            <AiOutlineSearch />
+          </div>
+          <div className="icon-bg hide-icon">
+            <MdKeyboardVoice />
+          </div>
+          <div className="icon-bg">
+            <GrApps />
+          </div>
+          <div className="icon-bg">
+            <HiOutlineDotsVertical />
+          </div>
+          <SignIn />
         </div>
-        <div className="icon-bg hide-icon">
-          <MdKeyboardVoice />
-        </div>
-        <div className="icon-bg">
-          <GrApps />
-        </div>
-        <div className="icon-bg">
-          <HiOutlineDotsVertical />
-        </div>
-        <SignIn />
-      </div>
-    </nav>
-  );
+      </nav>
+    );
+  } else {
+    return (
+      <SearchNav
+        setSearchInput={setSearchInput}
+        hiddenSearchNav={hiddenSearchNav}
+        setHiddenSearchNav={setHiddenSearchNav}
+      />
+    );
+  }
 }
 
 export default Nav;

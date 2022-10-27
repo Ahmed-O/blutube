@@ -1,5 +1,4 @@
 import React from "react";
-
 import { sideBarData } from "./sideBarData";
 
 function MinSidebar() {
